@@ -8,6 +8,7 @@ RSpec.describe BankAccount do
   let(:bank_account) { build(:bank_account) }
 
   it { expect(subject.balance.class).to eq(Money) }
+  it { is_expected.to have_many(:transfers) }
 
   context 'when there is balance' do
     let(:bank_account) { build(:bank_account, :without_balance) }
