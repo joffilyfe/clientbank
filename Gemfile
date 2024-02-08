@@ -39,6 +39,10 @@ group :test do
   gem 'shoulda-matchers', '~> 4.5'
 end
 
+gem 'dry-schema'
+gem 'dry-struct', '~> 1.0'
+gem 'dry-types', '~> 1.4'
+gem 'dry-validation', '~> 1.5'
 gem 'money-rails', '~> 1.15'
 gem 'sidekiq', '~> 7.2'
 gem 'sidekiq-scheduler'
