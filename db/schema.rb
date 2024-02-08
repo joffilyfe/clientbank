@@ -10,8 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_08_133412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bank_accounts", force: :cascade do |t|
+    t.string "organization_name", null: false
+    t.string "iban", null: false
+    t.string "bic", null: false
+    t.integer "balance_cents", default: 0, null: false
+    t.string "balance_currency", default: "EUR", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["iban", "bic"], name: "index_bank_accounts_on_iban_and_bic", unique: true
+  end
 
 end
